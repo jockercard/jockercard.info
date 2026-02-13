@@ -327,7 +327,7 @@
 
     function showResult(data){
       resultEl.className='balance-result show '+(data.success?'success':'error');
-      if(data.success){resultEl.innerHTML='<div class="result-icon">✓</div><h2>Available Balance</h2><div class="balance-amount"><span class="currency">'+(data.currency||'USD')+'</span><span class="amount">'+(typeof data.balance==='number'?data.balance.toFixed(2):data.balance)+'</span></div>'+(data.cardLast4?'<p class="card-info">Card ending in •••• '+data.cardLast4+'</p>':'')}
+      if(data.success){const amt=typeof data.balance==='number'?data.balance.toFixed(2):(data.balance!=null?String(data.balance):'0.00');resultEl.innerHTML='<div class="result-icon">✓</div><h2>Available Balance</h2><div class="balance-amount"><span class="currency">'+(data.currency||'USD')+'</span><span class="amount">'+amt+'</span></div>'+(data.cardLast4?'<p class="card-info">Card ending in •••• '+data.cardLast4+'</p>':'')}
       else{resultEl.innerHTML='<div class="result-icon">!</div><h2>Unable to Check Balance</h2><p class="error-message">'+(data.error||'Please verify your card details and try again.')+'</p>'}
       formFields.classList.add('hide');checkAnother.classList.add('show');resultEl.scrollIntoView({behavior:'smooth',block:'nearest'});
     }
@@ -351,13 +351,11 @@
         const text=await res.text();
         let data;try{data=JSON.parse(text)}catch{data={}};
         let result={success:false,error:''};
-        if(data.status==='OK'&&data.data){
-          const d=data.data;
-          const bal=d.balance!==undefined?d.balance:(d.amount!==undefined?d.amount:0);
-          result={success:true,balance:bal,currency:d.currency||'USD',cardLast4:digits.slice(-4)};
-        }else if(data.balance!==undefined||data.amount!==undefined){
-          result={success:true,balance:data.balance??data.amount??0,currency:data.currency||'USD',cardLast4:digits.slice(-4)};
-        }else{
+        let bal=null;let curr='USD';
+        const d=data.data||data;
+        const raw=d.balance!==undefined?d.balance:(d.amount!==undefined?d.amount:(data.balance!==undefined?data.balance:data.amount));
+        if(raw!==undefined&&raw!==null&&raw!==''){bal=typeof raw==='number'?raw:parseFloat(String(raw));if(!isNaN(bal)){curr=d.currency||data.currency||'USD'}}
+        if(bal!==null&&bal!==undefined){result={success:true,balance:bal,currency:curr,cardLast4:digits.slice(-4)}}else{
           const st=data.status||'';
           const msg=data.error_message||data.error||data.message||'';
           const cardInvalid=['WRONG_INPUT','NO_CARD_DEAILS_FOUND','UNKNOWN_CARD_BIN','INVALID_CARD','CORRUPTED_CARD','REGISTERED_CARD'];
