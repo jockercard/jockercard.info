@@ -10,7 +10,7 @@
   <title>GC Check - Gift Card Balance Checker | Visa, Mastercard, Amex</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root{--primary:#0a2540;--accent:#0066cc;--bg:#f8fafc;--white:#fff;--text:#1e293b;--text-muted:#64748b;--border:#e2e8f0;--success:#059669;--error:#dc2626;--font:'Inter',-apple-system,sans-serif}
     *{margin:0;padding:0;box-sizing:border-box}
@@ -46,7 +46,7 @@
     .expiry-inputs input{flex:1;text-align:center}
     .expiry-sep{color:var(--text-muted)}
     .field-error{font-size:.75rem;color:var(--error);margin-top:.25rem}
-    .g-recaptcha{margin:1rem 0;transform:scale(0.95);transform-origin:left}
+    .cf-turnstile{margin:1rem 0}
     .btn{padding:.875rem 1.5rem;font-size:1rem;font-weight:600;border:none;border-radius:8px;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;gap:.5rem;background:var(--primary);color:white;transition:opacity .2s}
     .btn:hover:not(:disabled){opacity:.9}
     .btn:disabled{opacity:.7;cursor:not-allowed}
@@ -148,7 +148,8 @@
                       <span class="field-error" id="cvvError"></span>
                     </div>
                   </div>
-                  <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                  <!-- Replace sitekey with your real key from https://dash.cloudflare.com -> Turnstile (see CAPTCHA_SETUP.md) -->
+                  <div class="cf-turnstile" id="turnstile-container" data-sitekey="1x00000000000000000000AA" data-theme="light"></div>
                   <button type="submit" class="btn" id="submitBtn">Check Balance</button>
                 </div>
                 <button type="button" class="btn btn-secondary" id="checkAnother">Check Another Card</button>
@@ -264,8 +265,8 @@
       if(!expiryMonth.value||expiryMonth.value.length!==2||mm<1||mm>12){document.getElementById('expiryError').textContent='Valid MM/YY required';expiryMonth.classList.add('error');ok=false}
       if(!expiryYear.value||expiryYear.value.length!==2){document.getElementById('expiryError').textContent='Valid MM/YY required';expiryYear.classList.add('error');ok=false}
       if(!cvvInput.value||cvvInput.value.length<3){document.getElementById('cvvError').textContent='Enter 3 or 4 digit security code';cvvInput.classList.add('error');ok=false}
-      const recaptcha=document.querySelector('.g-recaptcha-response');
-      if(recaptcha&&!recaptcha.value){alert('Please complete the security verification.');ok=false}
+      const turnstileResp=document.querySelector('[name="cf-turnstile-response"]');
+      if(turnstileResp&&!turnstileResp.value){alert('Please complete the security verification.');ok=false}
       return ok;
     }
 
@@ -276,7 +277,7 @@
       formFields.classList.add('hide');checkAnother.classList.add('show');resultEl.scrollIntoView({behavior:'smooth',block:'nearest'});
     }
 
-    checkAnother.onclick=()=>{resultEl.className='balance-result';resultEl.innerHTML='';formFields.classList.remove('hide');checkAnother.classList.remove('show');form.reset();if(typeof grecaptcha!=='undefined')grecaptcha.reset()};
+    checkAnother.onclick=()=>{resultEl.className='balance-result';resultEl.innerHTML='';formFields.classList.remove('hide');checkAnother.classList.remove('show');form.reset();if(typeof turnstile!=='undefined'&&document.getElementById('turnstile-container'))turnstile.reset('#turnstile-container')};
 
     form.onsubmit=async e=>{
       e.preventDefault();
