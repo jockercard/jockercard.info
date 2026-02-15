@@ -1,0 +1,39 @@
+.cookie-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-surface, #1e293b);
+  color: var(--color-text, #f8fafc);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  font-size: 0.875rem;
+}
+
+.cookie-bar p {
+  margin: 0;
+  flex: 1;
+  min-width: 200px;
+}
+
+.cookie-bar .btn-accept {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: var(--color-accent, #38bdf8);
+  color: var(--color-bg, #0f172a);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cookie-bar .btn-accept:hover {
+  opacity: 0.95;
+}

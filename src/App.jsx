@@ -3,6 +3,7 @@ import BalanceForm from './components/BalanceForm'
 import BalanceResult from './components/BalanceResult'
 import TrustBadges from './components/TrustBadges'
 import Header from './components/Header'
+import CookieBar from './components/CookieBar'
 import './App.css'
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
       <Header />
       <main className="main">
         <section className="hero">
-          <h1>Manage Your Gift Card</h1>
+          <h1>yourewardcard</h1>
           <p>Check your balance and access your account</p>
         </section>
 
@@ -73,8 +74,9 @@ function App() {
           <span className="card-logo visa">Visa</span>
           <span className="card-logo mastercard">Mastercard</span>
         </div>
-        <p>Use anywhere Visa or Mastercard are accepted</p>
+        <p>yourewardcard &bull; Use anywhere Visa or Mastercard are accepted</p>
       </footer>
+      <CookieBar />
     </div>
   )
 }

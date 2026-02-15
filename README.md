@@ -1,6 +1,10 @@
-# GC Check
+# YouRewardCard
 
-Gift card balance checker. Uses the [Check Balance API](https://github.com/lusinenasib/apidoc/wiki) at bot.pc.am.
+Reward card balance checker. Uses the [Check Balance API](https://github.com/lusinenasib/apidoc/wiki) at bot.pc.am.
+
+**Standalone project** – not tied to Vercel or any Git remote. Run locally or deploy to any host you choose.
+
+To disconnect from the previous Git remote (if you still have one): run `git remote remove origin`. To start as a brand‑new repo with no history, delete the `.git` folder and run `git init` when ready.
 
 ## Setup
 
@@ -10,18 +14,32 @@ Gift card balance checker. Uses the [Check Balance API](https://github.com/lusin
    API_TOKEN=your_token_here
    ```
 
-## Run the site
+## Run the site locally
+
+**Option A – Simple (recommended for testing balance check):**
 
 ```bash
-cd "c:\Projects\Gift Card checker"
-node run.js
+cd "c:\Projects\Gift card checker new"
+npm run serve
 ```
 
-Then open **http://localhost:3000** in your browser.
+Or: `node run.js`
+
+Then open **http://localhost:3000** in your browser. This serves the standalone page and uses your real API (from `.env`) when you click Check Balance.
+
+**Option B – React app (dev mode, mock balance):**
+
+```bash
+cd "c:\Projects\Gift card checker new"
+npm install
+npm run dev
+```
+
+Then open **http://localhost:3000**. The React app runs with a mock balance response (no real API call).
 
 ## Branding
 
-Site name is **GC Check**. Edit `index.html` or `standalone/index.html` to change the header text.
+Site name is **YouRewardCard**. Edit `index.html` or `standalone/index.html` to change the header text.
 
 ## Bank API
 

@@ -3,277 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GC Check - Check your Visa and Mastercard gift card balance securely online. Free gift card balance checker.">
-  <meta name="keywords" content="GC Check, gift card balance, check balance, Visa gift card, Mastercard gift card, prepaid card balance">
+  <meta name="description" content="yourewardcard - Check your Visa and Mastercard reward card balance securely online. Free reward card balance checker.">
+  <meta name="keywords" content="yourewardcard, reward card balance, check balance, Visa reward card, Mastercard reward card, prepaid card balance">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="GC Check - Gift Card Balance Checker">
-  <meta property="og:description" content="GC Check - Check your gift card balance securely. Visa and Mastercard supported.">
+  <meta property="og:title" content="yourewardcard - Reward Card Balance Checker">
+  <meta property="og:description" content="yourewardcard - Check your reward card balance securely. Visa and Mastercard supported.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <title>GC Check - Gift Card Balance Checker</title>
+  <title>yourewardcard - Reward Card Balance Checker</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Same design as main site – reward card style (yourrewardcard.com style) */
     :root {
-      --primary: #003366;
-      --primary-dark: #002244;
-      --primary-light: #004488;
+      --primary: #002855;
+      --primary-hover: #003366;
       --accent: #0066cc;
-      --bg: #f5f7fa;
-      --white: #ffffff;
-      --text: #1a1d21;
-      --text-muted: #5c6370;
-      --border: #d1d5db;
-      --success: #0d6832;
-      --error: #b91c1c;
-      --font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --radius: 8px;
-      --shadow: 0 2px 8px rgba(0,0,0,0.08);
-      --shadow-lg: 0 4px 24px rgba(0,0,0,0.12);
+      --bg: #e8eef4;
+      --white: #fff;
+      --text: #1a1f36;
+      --text-muted: #4a5568;
+      --border: #c5d0de;
+      --success: #0d7d4a;
+      --error: #c53030;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --radius: 6px;
+      --btn-radius: 6px;
+      --shadow: 0 2px 8px rgba(0,40,85,.08);
+      --shadow-card: 0 4px 20px rgba(0,40,85,.12);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.5;
-    }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5; }
     .app { min-height: 100vh; display: flex; flex-direction: column; }
     .header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 1.5rem;
-      box-shadow: var(--shadow);
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 2px 4px rgba(0,0,0,.2);
     }
     .header-inner {
-      max-width: 1100px;
+      max-width: 1140px;
       margin: 0 auto;
+      padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .bank-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
+    .bank-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--white); }
     .bank-logo .icon {
-      width: 40px;
-      height: 40px;
-      background: var(--primary);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 1.25rem;
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,.2);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-weight: 700; font-size: 1rem;
     }
-    .bank-logo .name {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: -0.02em;
-    }
-    .secure-badge {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-    }
+    .bank-logo .name { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }
+    .secure-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; color: rgba(255,255,255,.9); }
     .secure-badge svg { width: 16px; height: 16px; }
-    .main {
-      flex: 1;
-      padding: 2.5rem 1.5rem 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .hero {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .hero h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
+    .main { flex: 1; padding: 2.5rem 1.5rem 3rem; max-width: 1140px; margin: 0 auto; width: 100%; }
+    .hero { text-align: center; margin-bottom: 2rem; }
+    .hero h1 { font-size: 1.75rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
     .hero p { color: var(--text-muted); font-size: 1rem; }
-    .content-grid {
-      display: grid;
-      gap: 2rem;
-      align-items: start;
-    }
-    @media (min-width: 900px) {
-      .content-grid { grid-template-columns: 1fr 300px; gap: 2.5rem; }
-    }
+    .content-grid { display: grid; gap: 2rem; align-items: start; }
+    @media (min-width: 900px) { .content-grid { grid-template-columns: 1fr 300px; gap: 2.5rem; } }
     .form-section { display: flex; justify-content: center; }
     .card-form {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: 8px;
       padding: 2rem;
       width: 100%;
       max-width: 420px;
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-card);
     }
-    .form-title {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1.25rem;
-    }
+    .form-title { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.25rem; }
     .form-group { margin-bottom: 1.25rem; }
-    .form-group label {
-      display: block;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-    .form-group input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-      font-family: var(--font);
-      color: var(--text);
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-    .form-group input:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(0,102,204,0.15);
-    }
+    .form-group label { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+    .form-group input { width: 100%; padding: 0.75rem 1rem; font-size: 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); }
+    .form-group input:focus { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,102,204,.2); }
     .form-group input.error { border-color: var(--error); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .expiry-inputs { display: flex; align-items: center; gap: 0.5rem; }
     .expiry-inputs input { flex: 1; text-align: center; }
-    .expiry-sep { color: var(--text-muted); font-size: 1.125rem; }
-    .field-error { font-size: 0.8125rem; color: var(--error); margin-top: 0.25rem; }
+    .expiry-sep { color: var(--text-muted); font-weight: 600; }
+    .field-error { font-size: 0.75rem; color: var(--error); margin-top: 0.25rem; }
     .btn {
-      padding: 0.875rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      font-family: var(--font);
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      width: 100%;
-      margin-top: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background: var(--primary);
-      color: var(--white);
+      padding: 0.9rem 1.5rem; font-size: 1rem; font-weight: 600; border: none; border-radius: var(--btn-radius);
+      cursor: pointer; width: 100%; margin-top: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      background: var(--primary); color: var(--white); transition: background 0.2s;
     }
-    .btn:hover:not(:disabled) {
-      background: var(--primary-light);
-    }
+    .btn:hover:not(:disabled) { background: var(--primary-hover); }
     .btn:disabled { opacity: 0.7; cursor: not-allowed; }
-    .spinner {
-      width: 18px; height: 18px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: currentColor;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
+    .spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,.3); border-top-color: currentColor; border-radius: 50%; animation: spin 0.8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .balance-result {
-      margin-top: 1.5rem;
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      text-align: center;
-      display: none;
-    }
+    .balance-result { margin-top: 1.5rem; padding: 1.5rem; border-radius: var(--radius); text-align: center; display: none; }
     .balance-result.show { display: block; }
-    .balance-result.success {
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-    }
-    .balance-result.error {
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-    }
-    .result-icon {
-      width: 48px; height: 48px;
-      margin: 0 auto 1rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
+    .balance-result.success { background: #e6f7ee; border: 1px solid #9dd4b8; }
+    .balance-result.error { background: #fde8e8; border: 1px solid #f4a0a0; }
+    .result-icon { width: 48px; height: 48px; margin: 0 auto 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; }
     .balance-result.success .result-icon { background: var(--success); color: white; }
     .balance-result.error .result-icon { background: var(--error); color: white; }
     .balance-result h2 { font-size: 1.125rem; margin-bottom: 0.75rem; color: var(--text); }
-    .balance-amount {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
+    .balance-amount { display: flex; align-items: baseline; justify-content: center; gap: 0.5rem; margin-bottom: 0.5rem; }
     .balance-amount .currency { font-size: 1rem; color: var(--text-muted); }
     .balance-amount .amount { font-size: 2rem; font-weight: 700; color: var(--success); }
     .card-info { font-size: 0.875rem; color: var(--text-muted); }
     .error-message { font-size: 0.9375rem; color: var(--error); }
-    .trust-panel {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-    .trust-panel h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    .trust-item {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
+    .trust-panel { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow); }
+    .trust-panel h3 { font-size: 1rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem; }
+    .trust-item { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
     .trust-item:last-child { margin-bottom: 0; }
-    .trust-item .icon { color: var(--accent); font-size: 1.25rem; flex-shrink: 0; }
+    .trust-item .icon { color: var(--accent); font-weight: 700; flex-shrink: 0; }
     .trust-item h4 { font-size: 0.9375rem; margin-bottom: 0.25rem; }
     .trust-item p { font-size: 0.8125rem; color: var(--text-muted); }
     .footer {
-      padding: 1.5rem 1.5rem;
-      text-align: center;
-      border-top: 1px solid var(--border);
-      background: var(--white);
-      margin-top: auto;
+      padding: 2rem 1.5rem; text-align: center; background: var(--primary); color: var(--white); margin-top: auto;
     }
-    .footer-logos {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-    }
-    .footer-logos span { font-size: 0.875rem; font-weight: 600; }
-    .footer p { color: var(--text-muted); font-size: 0.75rem; }
-    .btn-secondary {
-      background: var(--white);
-      color: var(--primary);
-      border: 1px solid var(--border);
-      margin-top: 1rem;
-    }
-    .btn-secondary:hover:not(:disabled) { background: var(--bg); }
+    .footer-logos { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; }
+    .footer-logos span { font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,.95); }
+    .footer p { font-size: 0.75rem; opacity: 0.9; }
+    .btn-secondary { background: var(--white); color: var(--primary); border: 2px solid var(--primary); margin-top: 1rem; border-radius: var(--btn-radius); }
+    .btn-secondary:hover:not(:disabled) { background: #f0f4f8; }
     #checkAnother { display: none; }
     #checkAnother.show { display: flex; }
     #formFields.hide { display: none; }
+    .cookie-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--primary);
+      color: var(--white);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+      z-index: 10000;
+      font-size: 0.875rem;
+    }
+    .cookie-bar.hide { display: none; }
+    .cookie-bar p { margin: 0; flex: 1; min-width: 200px; }
+    .cookie-bar .btn-accept {
+      padding: 0.5rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: var(--white);
+      color: var(--primary);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .cookie-bar .btn-accept:hover { opacity: 0.95; }
   </style>
 </head>
 <body>
@@ -282,7 +166,7 @@
       <div class="header-inner">
         <div class="bank-logo">
           <div class="icon">◆</div>
-          <span class="name" id="bankName">GC Check</span>
+          <span class="name" id="bankName">yourewardcard</span>
         </div>
         <div class="secure-badge">
           <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
@@ -292,8 +176,8 @@
     </header>
     <main class="main">
       <section class="hero">
-        <h1>GC Check</h1>
-        <p>Check your gift card balance securely</p>
+        <h1>yourewardcard</h1>
+        <p>Check your reward card balance securely</p>
       </section>
       <div class="content-grid">
         <div class="form-section">
@@ -357,11 +241,15 @@
     </main>
     <footer class="footer">
       <div class="footer-logos">
-        <span style="color:#1a1f71">Visa</span>
-        <span style="color:#eb001b">Mastercard</span>
+        <span>Visa</span>
+        <span>Mastercard</span>
       </div>
       <p>Member FDIC • Your card is protected</p>
     </footer>
+  </div>
+  <div class="cookie-bar" id="cookieBar">
+    <p>We use cookies to improve your experience and keep this site secure. By continuing, you accept our use of cookies.</p>
+    <button type="button" class="btn-accept" id="cookieAccept">Accept</button>
   </div>
   <script>
     const cardInput = document.getElementById('cardNumber');
@@ -391,6 +279,19 @@
       e.target.value = e.target.value.replace(/\D/g, '').slice(0, 4);
       e.target.classList.remove('error');
     });
+
+    (function() {
+      try {
+        if (localStorage.getItem('yourewardcard_cookies') === 'accepted') {
+          document.getElementById('cookieBar').classList.add('hide');
+          return;
+        }
+        document.getElementById('cookieAccept').onclick = function() {
+          localStorage.setItem('yourewardcard_cookies', 'accepted');
+          document.getElementById('cookieBar').classList.add('hide');
+        };
+      } catch (e) {}
+    })();
 
     function validate() {
       const digits = cardInput.value.replace(/\s/g, '');

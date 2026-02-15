@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gc-check-lime.vercel.app/sitemap.xml
+Sitemap: https://yourewardcard.com/sitemap.xml

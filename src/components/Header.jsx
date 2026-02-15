@@ -5,8 +5,8 @@ function Header() {
     <header className="header">
       <div className="header-inner">
         <div className="logo">
-          <span className="logo-icon">◆</span>
-          <span className="logo-text">GiftCard</span>
+          <span className="logo-icon">YR</span>
+          <span className="logo-text">yourewardcard</span>
         </div>
         <nav className="nav">
           <a href="#check" className="nav-link active">Check Balance</a>

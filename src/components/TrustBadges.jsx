@@ -7,7 +7,7 @@ const badges = [
     description: 'Use your gift card at millions of locations and online.'
   },
   {
-    icon: '◆',
+    icon: 'YR',
     title: 'Visa & Mastercard',
     description: 'Use anywhere Visa or Mastercard are accepted.'
   },
@@ -31,7 +31,7 @@ function TrustBadge({ icon, title, description }) {
 function TrustBadges() {
   return (
     <div className="trust-badges">
-      <h2 className="badges-title">Your Gift Card Benefits</h2>
+      <h2 className="badges-title">yourewardcard – Your Reward Card Benefits</h2>
       {badges.map((b, i) => (
         <TrustBadge key={i} {...b} />
       ))}

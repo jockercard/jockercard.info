@@ -1,18 +1,32 @@
 @echo off
 echo ========================================
-echo  Deploy GC Check to GitHub
+echo  Deploy yourewardcard to GitHub
 echo ========================================
+echo.
+echo STEP 1: Create a new repo on GitHub first!
+echo   - Go to https://github.com/new
+echo   - Repository name: yourewardcard
+echo   - Leave it empty (no README). Create.
 echo.
 set /p USERNAME="Enter your GitHub username: "
 cd /d "%~dp0"
 
-git init
-git add .
-git commit -m "GC Check site"
-git branch -M main
-git remote add origin https://github.com/%USERNAME%/gc-check.git
-git push -u origin main
+if not exist .git (
+  git init
+  git add .
+  git commit -m "yourewardcard site - ready for Vercel"
+  git branch -M main
+  git remote add origin https://github.com/%USERNAME%/yourewardcard.git
+  git push -u origin main
+) else (
+  git add .
+  git status
+  git commit -m "Update yourewardcard site" 2>nul
+  git remote 2>nul | findstr /C:"origin" >nul || git remote add origin https://github.com/%USERNAME%/yourewardcard.git
+  git branch -M main 2>nul
+  git push -u origin main
+)
 
 echo.
-echo Done! Now go to https://vercel.com and import your repo.
+echo Done! Next: connect this repo to Vercel (see NEXT-STEPS.md).
 pause

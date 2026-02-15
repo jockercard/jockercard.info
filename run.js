@@ -94,7 +94,7 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log('');
-  console.log('  GC Check');
+  console.log('  YouRewardCard');
   console.log('  -------------------------');
   console.log('  Open: http://localhost:' + PORT);
   console.log('');

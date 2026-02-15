@@ -1,4 +1,4 @@
-# Bing Search Setup – Get GC Check to Appear in Search
+# Bing Search Setup – Get YouRewardCard to Appear in Search
 
 ## What's Done
 
@@ -10,9 +10,9 @@
 
 ## Step 1: Update Your URLs (if needed)
 
-Your Vercel URL might be different. Check your actual URL (e.g. `https://gc-check-xxx.vercel.app`).
+When you deploy, use your actual site URL (e.g. `https://your-domain.com`).
 
-Edit these files and replace `https://gc-check-lime.vercel.app` with your real URL:
+Edit these files and replace `https://your-domain.com` with your real URL:
 
 - **robots.txt** – line with `Sitemap:`
 - **sitemap.xml** – the `<loc>` tag
@@ -20,16 +20,9 @@ Edit these files and replace `https://gc-check-lime.vercel.app` with your real U
 
 ---
 
-## Step 2: Push Changes to GitHub
+## Step 2: Deploy your site
 
-```
-cd "c:\Projects\Gift Card checker"
-"C:\Program Files\Git\cmd\git.exe" add .
-"C:\Program Files\Git\cmd\git.exe" commit -m "Add robots.txt, sitemap, SEO"
-"C:\Program Files\Git\cmd\git.exe" push origin main
-```
-
-(Vercel will auto-deploy)
+Deploy your project to your chosen host. When you have a live URL, continue to Step 3.
 
 ---
 
@@ -38,12 +31,12 @@ cd "c:\Projects\Gift Card checker"
 1. Go to **https://www.bing.com/webmasters**
 2. Sign in with your Microsoft account
 3. Click **Add a site**
-4. Enter your site URL: `https://gc-check-lime.vercel.app` (or your real URL)
+4. Enter your site URL (e.g. `https://your-domain.com`)
 5. Choose verification method:
    - **Option A:** Add the XML file they give you to your site
    - **Option B:** Add the meta tag to your index.html `<head>` (Bing will show you the tag)
 6. Click **Verify**
-7. After verification: **URL Submission** → Submit your sitemap: `https://your-site.vercel.app/sitemap.xml`
+7. After verification: **URL Submission** → Submit your sitemap: `https://your-domain.com/sitemap.xml`
 8. Click **Submit URLs** and paste your homepage URL
 
 ---

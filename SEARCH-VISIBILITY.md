@@ -1,4 +1,4 @@
-# Get Your Site to Show When People Search "Gift Card Check"
+# Get Your Site to Show When People Search "Reward Card Check"
 
 ## What's Done
 
@@ -15,7 +15,7 @@ Google has most of the search traffic. You MUST add your site here:
 1. Go to **https://search.google.com/search-console**
 2. Sign in with Google
 3. Click **Add property**
-4. Enter: `https://gc-check-lime.vercel.app`
+4. Enter your site URL (e.g. `https://your-domain.com`)
 5. Verify ownership:
    - Choose **HTML tag** method
    - Copy the meta tag they give you
@@ -28,9 +28,9 @@ Google has most of the search traffic. You MUST add your site here:
 ## Step 2: Bing Webmaster Tools – Submit Sitemap
 
 1. Go to **https://www.bing.com/webmasters**
-2. Open your site (GC Check)
-3. **Sitemaps** → Submit sitemap URL: `https://gc-check-lime.vercel.app/sitemap.xml`
-4. **URL Submission** → Submit: `https://gc-check-lime.vercel.app`
+2. Open your site (YouRewardCard)
+3. **Sitemaps** → Submit sitemap URL: `https://your-domain.com/sitemap.xml`
+4. **URL Submission** → Submit: `https://your-domain.com`
 
 ---
 
@@ -44,9 +44,9 @@ Google has most of the search traffic. You MUST add your site here:
 
 ## Step 4: Check If You're Indexed
 
-**Google**: Search `site:gc-check-lime.vercel.app` – if your page appears, you're indexed.
+**Google**: Search `site:your-domain.com` – if your page appears, you're indexed.
 
-**Bing**: Search `site:gc-check-lime.vercel.app` on bing.com.
+**Bing**: Search `site:your-domain.com` on bing.com.
 
 ---
 

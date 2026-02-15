@@ -29,7 +29,7 @@ node run.js
 
 You should see:
 ```
-  GC Check
+  yourewardcard
   -------------------------
   Open: http://localhost:3000
 ```
@@ -47,8 +47,17 @@ You should see:
 ## Quick start (one command)
 
 ```bash
-cd "c:\Projects\Gift Card checker"
+cd "c:\Projects\Gift card checker new"
 node run.js
 ```
 
-Then open http://localhost:3000 in your browser.
+Then open **http://localhost:3000** in your browser.
+
+---
+
+## Two ways to run
+
+| Command | What runs | Balance check |
+|--------|------------|----------------|
+| `node run.js` or `npm run serve` | Standalone HTML (index from `standalone/`) | **Real API** (uses `API_TOKEN` from `.env`) |
+| `npm run dev` | React app + Express | **Mock** (fake balance; for UI only) |
