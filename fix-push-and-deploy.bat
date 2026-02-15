@@ -3,7 +3,7 @@ cd /d "%~dp0"
 
 echo.
 echo Choose what you want:
-echo   1) Push to YOUREWARDCARD repo (you created at github.com/new named "yourewardcard")
+echo   1) Push to Yourrewardcard repo (you created at github.com/new named "Yourrewardcard")
 echo   2) Push to existing GC-CHECK repo (merge remote first, then push)
 echo.
 set /p CHOICE="Enter 1 or 2: "
@@ -16,11 +16,11 @@ exit /b
 
 :yourewardcard
 echo.
-echo Switching remote to yourewardcard and pushing...
-git remote set-url origin https://github.com/gccheck-balance/yourewardcard.git
+echo Switching remote to Yourrewardcard and pushing...
+git remote set-url origin https://github.com/gccheck-balance/Yourrewardcard.git
 git push -u origin main --force
 echo.
-echo Done. If you see success above, go to https://vercel.com and import repo "yourewardcard".
+echo Done. If you see success above, go to https://vercel.com and import repo "Yourrewardcard".
 goto end
 
 :gccheck

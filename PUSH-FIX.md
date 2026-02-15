@@ -11,19 +11,19 @@ Git isn’t available in Cursor’s environment, so you need to run these on you
 
 ---
 
-## Option A: Push to the **yourewardcard** repo (recommended)
+## Option A: Push to the **Yourrewardcard** repo (recommended)
 
-Use this if you already created a new repo at https://github.com/new named **yourewardcard**.
+Use this if you already created a new repo at https://github.com/new named **Yourrewardcard**.
 
 1. **Double‑click `fix-push-and-deploy.bat`** in your project folder.
 2. When it asks, type **1** and press Enter.
-3. It will point the remote to **yourewardcard** and push (with `--force` so your current project overwrites the remote).
-4. If you see “success” or “Everything up-to-date”, go to **https://vercel.com** → Add New → Project → import **yourewardcard** → Deploy.
+3. It will point the remote to **Yourrewardcard** and push (with `--force` so your current project overwrites the remote).
+4. If you see “success” or “Everything up-to-date”, go to **https://vercel.com** → Add New → Project → import **Yourrewardcard** → Deploy.
 
-If you **haven’t** created the **yourewardcard** repo yet:
+If you **haven’t** created the **Yourrewardcard** repo yet:
 
 1. Go to **https://github.com/new**
-2. Repository name: **yourewardcard**
+2. Repository name: **Yourrewardcard** (capital Y)
 3. Create repository (empty, no README).
 4. Then run **fix-push-and-deploy.bat** and choose **1**.
 
@@ -51,6 +51,6 @@ git push origin main
 
 1. Open **https://vercel.com** and sign in (e.g. with GitHub).
 2. **Add New** → **Project**.
-3. Import the repo you pushed to (**yourewardcard** or **gc-check**).
+3. Import the repo you pushed to (**Yourrewardcard** or **gc-check**).
 4. Click **Deploy**.
 5. In the project: **Settings** → **Domains** → add **yourewardcard.com** and set DNS in Namecheap as in **CONNECT-DOMAIN.md**.

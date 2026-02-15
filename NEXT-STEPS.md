@@ -7,7 +7,7 @@ Everything in the project is ready. You only need to do **3 things** in your bro
 ## Step 1: Create the repo on GitHub (you do this once)
 
 1. Open: **https://github.com/new**
-2. **Repository name:** `yourewardcard`
+2. **Repository name:** `Yourrewardcard` (capital Y)
 3. **Public.** Leave **“Add a README”** unchecked (empty repo).
 4. Click **Create repository**.
 
@@ -33,7 +33,7 @@ git init
 git add .
 git commit -m "yourewardcard site"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/yourewardcard.git
+git remote add origin https://github.com/YOUR_USERNAME/Yourrewardcard.git
 git push -u origin main
 ```
 
@@ -45,19 +45,19 @@ When asked for password, use a **Personal Access Token** from https://github.com
 
 1. Open: **https://vercel.com** and sign in (or sign up with GitHub).
 2. Click **Add New…** → **Project**.
-3. **Import** the repo **yourewardcard** (from your GitHub list).
-4. **Project name:** leave as `yourewardcard` (or change if you like).
+3. **Import** the repo **Yourrewardcard** (from your GitHub list).
+4. **Project name:** leave as `Yourrewardcard` (or change if you like).
 5. **Framework Preset:** leave as **Other** (or **Vite** if it picks it up – both work).
 6. **Root Directory:** leave empty.
 7. **Build and Output:** leave defaults. The project has **vercel.json** so Vercel will serve your site as-is.
 8. Click **Deploy**.
-9. Wait ~1 minute. You’ll get a URL like **https://yourewardcard.vercel.app**.
+9. Wait ~1 minute. You’ll get a URL like **https://yourrewardcard.vercel.app** (or similar).
 
 ---
 
 ## Step 4: Connect your domain (yourewardcard.com)
 
-1. In Vercel, open your **yourewardcard** project.
+1. In Vercel, open your **Yourrewardcard** project.
 2. Go to **Settings** → **Domains**.
 3. Enter **yourewardcard.com** and click **Add**.
 4. Also add **www.yourewardcard.com** if you want.
@@ -79,9 +79,9 @@ When asked for password, use a **Personal Access Token** from https://github.com
 
 | Step | Where | What you do |
 |------|--------|-------------|
-| 1 | GitHub | Create empty repo **yourewardcard** at https://github.com/new |
+| 1 | GitHub | Create empty repo **Yourrewardcard** at https://github.com/new |
 | 2 | Your PC | Run **deploy-to-github.bat** (or the git commands above) and push |
-| 3 | Vercel | **Add New → Project** → import **yourewardcard** → **Deploy** |
+| 3 | Vercel | **Add New → Project** → import **Yourrewardcard** → **Deploy** |
 | 4 | Vercel + Namecheap | In Vercel add domain **yourewardcard.com**; in Namecheap set nameservers or A/CNAME as Vercel shows |
 
-After Step 3 your site is live at **https://yourewardcard.vercel.app**. After Step 4 it’s also at **https://yourewardcard.com**.
+After Step 3 your site is live at your Vercel URL. After Step 4 it’s also at **https://yourewardcard.com**.
