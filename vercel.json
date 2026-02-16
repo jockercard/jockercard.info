@@ -4,6 +4,7 @@
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
     { "source": "/faq", "destination": "/faq/index.html" },
     { "source": "/contact", "destination": "/contact/index.html" },
     { "source": "/learnmore", "destination": "/learnmore/index.html" }
@@ -14,6 +15,12 @@
       "headers": [
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
       ]
     }
   ]

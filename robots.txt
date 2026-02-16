@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yourewardcard.com/sitemap.xml
+Sitemap: https://www.yourrewarrdcard.com/sitemap.xml

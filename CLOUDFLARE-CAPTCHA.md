@@ -1,6 +1,6 @@
 # Connect Cloudflare Turnstile (captcha) to your live site
 
-Your site already uses Cloudflare Turnstile for the Sign In form. To have it work on **yourrewardcard.vercel.app** and **yourewardcard.com**, register your domains and use your own widget keys.
+Your site already uses Cloudflare Turnstile for the Sign In form. To have it work on **yourrewardcard.vercel.app** and **yourrewarrdcard.com**, register your domains and use your own widget keys.
 
 ---
 
@@ -18,7 +18,7 @@ Your site already uses Cloudflare Turnstile for the Sign In form. To have it wor
 2. **Widget name:** e.g. `yourewardcard`.
 3. **Domain:** Add your live domains, one per line:
    - `yourrewardcard.vercel.app`
-   - `yourewardcard.com`
+   - `yourrewarrdcard.com`
    - (Optional for local testing: `localhost`)
 4. **Widget type:** **Managed** (recommended) or **Visible**.
 5. Click **Create**.
@@ -64,7 +64,7 @@ Copy the **Site key**.
 | Step | Action |
 |------|--------|
 | 1 | **dash.cloudflare.com** → **Turnstile**. |
-| 2 | **Add widget** → name, add domains `yourrewardcard.vercel.app` and `yourewardcard.com` → **Managed** → Create. |
+| 2 | **Add widget** → name, add domains `yourrewardcard.vercel.app` and `yourrewarrdcard.com` → **Managed** → Create. |
 | 3 | Copy the **Site key**. |
 | 4 | In **index.html**, replace `data-sitekey="0x4AAAAAACb6D6Jy1pdzUNSr"` with `data-sitekey="YOUR_SITE_KEY"`. |
 | 5 | Push to GitHub so Vercel redeploys; test on your live URL. |

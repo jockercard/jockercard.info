@@ -50,9 +50,9 @@ If using Netlify, drag the folder or connect the repo. Ensure:
 
 ## After connecting your Namecheap domain
 
-In your host (Netlify/Vercel/etc.) add the custom domain (e.g. `yourewardcard.com`). The host will show you either:
+In your host (Netlify/Vercel/etc.) add the custom domain (e.g. `yourrewarrdcard.com`). The host will show you either:
 
 - **Nameservers** – set them in Namecheap (Domain List → Manage → Nameservers), or  
 - **A/CNAME records** – add them in Namecheap Advanced DNS as the host instructs.
 
-Then wait for DNS (up to 24–48 hours) and test `https://yourewardcard.com`, `https://yourewardcard.com/faq`, `https://yourewardcard.com/contact`.
+Then wait for DNS (up to 24–48 hours) and test `https://yourrewarrdcard.com`, `https://yourrewarrdcard.com/faq`, `https://yourrewarrdcard.com/contact`.

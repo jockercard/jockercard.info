@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.yourrewarrdcard.com/</loc>
@@ -24,4 +24,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+</urlset>`;
+
+export const config = { runtime: 'edge' };
+
+export default function handler(req) {
+  return new Response(SITEMAP_XML, {
+    headers: {
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+    },
+  });
+}

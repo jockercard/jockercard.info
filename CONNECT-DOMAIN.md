@@ -1,6 +1,6 @@
-# Connect yourewardcard.com (Namecheap) to your site
+# Connect yourrewarrdcard.com (Namecheap) to your site
 
-You bought the domain on **Namecheap**. To show your site at **yourewardcard.com**, you need to **host the site** somewhere, then **point the domain** to that host.
+You bought the domain on **Namecheap**. To show your site at **yourrewarrdcard.com**, you need to **host the site** somewhere, then **point the domain** to that host.
 
 ---
 
@@ -27,8 +27,8 @@ After this you get a **host URL**, e.g.:
 
 1. Open your site → **Domain settings** (or **Set up a custom domain**).
 2. Click **Add custom domain** or **Add domain alias**.
-3. Enter: **yourewardcard.com**
-4. Also add **www.yourewardcard.com** if the host asks for it.
+3. Enter: **yourrewarrdcard.com**
+4. Also add **www.yourrewarrdcard.com** if the host asks for it.
 5. Netlify will show either:
    - **Use Netlify DNS** (recommended) → you’ll use Netlify’s nameservers in Namecheap, or  
    - **Use external DNS** → you’ll add A/CNAME records in Namecheap (Netlify shows the values).
@@ -36,20 +36,20 @@ After this you get a **host URL**, e.g.:
 ### On Vercel
 
 1. Project → **Settings** → **Domains**.
-2. Add **yourewardcard.com** and **www.yourewardcard.com**.
+2. Add **yourrewarrdcard.com** and **www.yourrewarrdcard.com**.
 3. Vercel shows the DNS records (A and CNAME) to add at your registrar.
 
 ### On GitHub Pages
 
 1. Repo → **Settings** → **Pages**.
-2. Under **Custom domain**, type **yourewardcard.com** → **Save**.
+2. Under **Custom domain**, type **yourrewarrdcard.com** → **Save**.
 3. GitHub shows a CNAME target (e.g. `yourusername.github.io`) and tells you to add a CNAME record at your DNS provider.
 
 ---
 
 ## Step 3: Point Namecheap to the host
 
-Log in to [Namecheap](https://www.namecheap.com) → **Domain List** → click **Manage** next to **yourewardcard.com**.
+Log in to [Namecheap](https://www.namecheap.com) → **Domain List** → click **Manage** next to **yourrewarrdcard.com**.
 
 You have two ways:
 
@@ -105,10 +105,10 @@ You have two ways:
 
 1. Wait at least 10–30 minutes after changing DNS.
 2. Open:
-   - **https://yourewardcard.com**
-   - **https://www.yourewardcard.com** (if you set it up)
-   - **https://yourewardcard.com/faq**
-   - **https://yourewardcard.com/contact**
+   - **https://yourrewarrdcard.com**
+   - **https://www.yourrewarrdcard.com** (if you set it up)
+   - **https://yourrewarrdcard.com/faq**
+   - **https://yourrewarrdcard.com/contact**
 3. If it doesn’t load, wait longer or double‑check the nameservers or A/CNAME values (no typos, correct host/value from the host).
 
 ---
@@ -118,9 +118,9 @@ You have two ways:
 | Step | Where | Action |
 |------|--------|--------|
 | 1 | Netlify/Vercel/GitHub | Upload site, get host URL. |
-| 2 | Netlify/Vercel/GitHub | Add custom domain: **yourewardcard.com** (and **www** if needed). |
+| 2 | Netlify/Vercel/GitHub | Add custom domain: **yourrewarrdcard.com** (and **www** if needed). |
 | 3 | Namecheap | Either set **nameservers** (Option A) or add **A + CNAME** (Option B) as the host says. |
 | 4 | Host | Enable HTTPS if needed. |
-| 5 | Browser | Test **https://yourewardcard.com** and **/faq**, **/contact**. |
+| 5 | Browser | Test **https://yourrewarrdcard.com** and **/faq**, **/contact**. |
 
 If you tell me which host you use (Netlify, Vercel, or GitHub Pages), I can give the exact values to put in Namecheap for that one.

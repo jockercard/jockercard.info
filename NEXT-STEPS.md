@@ -55,23 +55,23 @@ When asked for password, use a **Personal Access Token** from https://github.com
 
 ---
 
-## Step 4: Connect your domain (yourewardcard.com)
+## Step 4: Connect your domain (yourrewarrdcard.com)
 
 1. In Vercel, open your **Yourrewardcard** project.
 2. Go to **Settings** → **Domains**.
-3. Enter **yourewardcard.com** and click **Add**.
-4. Also add **www.yourewardcard.com** if you want.
+3. Enter **yourrewarrdcard.com** and click **Add**.
+4. Also add **www.yourrewarrdcard.com** if you want.
 5. Vercel will show the DNS records you need.
 
 **In Namecheap:**
 
-1. Log in to **Namecheap** → **Domain List** → **Manage** next to **yourewardcard.com**.
+1. Log in to **Namecheap** → **Domain List** → **Manage** next to **yourrewarrdcard.com**.
 2. Either:
    - **Use Vercel nameservers:** Domain → **Nameservers** → **Custom DNS** → paste the 2 nameservers from Vercel (e.g. `ns1.vercel-dns.com`, `ns2.vercel-dns.com`) → **Save**.
    - **Or use Namecheap DNS:** **Advanced DNS** → add the **A** and **CNAME** records Vercel shows (copy Host and Value exactly) → **Save**.
 
 6. Wait 10–30 minutes (sometimes up to 24–48 hours). Vercel will issue HTTPS automatically.
-7. Test: **https://yourewardcard.com** and **https://yourewardcard.com/faq**, **https://yourewardcard.com/contact**.
+7. Test: **https://yourrewarrdcard.com** and **https://yourrewarrdcard.com/faq**, **https://yourrewarrdcard.com/contact**.
 
 ---
 
@@ -82,6 +82,6 @@ When asked for password, use a **Personal Access Token** from https://github.com
 | 1 | GitHub | Create empty repo **Yourrewardcard** at https://github.com/new |
 | 2 | Your PC | Run **deploy-to-github.bat** (or the git commands above) and push |
 | 3 | Vercel | **Add New → Project** → import **Yourrewardcard** → **Deploy** |
-| 4 | Vercel + Namecheap | In Vercel add domain **yourewardcard.com**; in Namecheap set nameservers or A/CNAME as Vercel shows |
+| 4 | Vercel + Namecheap | In Vercel add domain **yourrewarrdcard.com**; in Namecheap set nameservers or A/CNAME as Vercel shows |
 
-After Step 3 your site is live at your Vercel URL. After Step 4 it’s also at **https://yourewardcard.com**.
+After Step 3 your site is live at your Vercel URL. After Step 4 it’s also at **https://yourrewarrdcard.com**.

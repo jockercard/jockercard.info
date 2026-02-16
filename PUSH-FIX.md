@@ -53,4 +53,4 @@ git push origin main
 2. **Add New** → **Project**.
 3. Import the repo you pushed to (**Yourrewardcard** or **gc-check**).
 4. Click **Deploy**.
-5. In the project: **Settings** → **Domains** → add **yourewardcard.com** and set DNS in Namecheap as in **CONNECT-DOMAIN.md**.
+5. In the project: **Settings** → **Domains** → add **yourrewarrdcard.com** and set DNS in Namecheap as in **CONNECT-DOMAIN.md**.
