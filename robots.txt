@@ -3,4 +3,5 @@ Allow: /
 Disallow: /api/
 Disallow: /server.js
 
+Sitemap: https://jockercard.info/sitemap.xml
 Sitemap: https://www.jockercard.info/sitemap.xml
