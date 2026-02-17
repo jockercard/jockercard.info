@@ -1,5 +1,10 @@
 {
-  "name": "yourewardcard",
+  "name": "jockercard",
   "private": true,
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "description": "Jockercard.info - Jocker Prepaid Card website",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  }
 }

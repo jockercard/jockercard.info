@@ -1,26 +1,17 @@
 {
-  "version": 2,
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "framework": null,
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
-    { "source": "/faq", "destination": "/faq/index.html" },
-    { "source": "/contact", "destination": "/contact/index.html" },
-    { "source": "/learnmore", "destination": "/learnmore/index.html" }
+    { "source": "/check-balance", "destination": "/check-balance/index.html" },
+    { "source": "/check-balance/", "destination": "/check-balance/index.html" },
+    { "source": "/((?!api|check-balance|_next|favicon|robots|sitemap).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
-      ]
-    },
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
     }
   ]

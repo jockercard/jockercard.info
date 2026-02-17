@@ -4,5 +4,3 @@ dist/
 .env.local
 *.log
 .DS_Store
-Your Reward Card_files/
-package-lock.json

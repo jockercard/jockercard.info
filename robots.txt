@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://www.yourrewarrdcard.com/sitemap.xml
+# Will update when ready to index
