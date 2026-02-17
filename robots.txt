@@ -1,4 +1,6 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /api/
+Disallow: /server.js
 
-# Will update when ready to index
+Sitemap: https://www.jockercard.info/sitemap.xml
