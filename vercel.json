@@ -2,7 +2,7 @@
   "rewrites": [
     { "source": "/check-balance", "destination": "/check-balance/index.html" },
     { "source": "/check-balance/", "destination": "/check-balance/index.html" },
-    { "source": "/((?!api|check-balance|_next|favicon|robots|sitemap).*)", "destination": "/index.html" }
+    { "source": "/((?!api|check-balance|_next|favicon|robots|sitemap|images).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
