@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
     { "source": "/check-balance", "destination": "/check-balance/index.html" },
     { "source": "/check-balance/", "destination": "/check-balance/index.html" },
     { "source": "/((?!api|check-balance|_next|favicon|robots|sitemap).*)", "destination": "/index.html" }
